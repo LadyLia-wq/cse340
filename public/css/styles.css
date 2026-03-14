@@ -89,14 +89,24 @@ display:block;
 }
 
 .hero-text{
+max-width: 45%;
 position:absolute;
-top:15px;
-left:15px;
+top:5%;
+left:5%;
 background: rgba(255,255,255,0.6); 
 padding:10px 15px;
 border-radius:5px;
 color:#0097a7;
 font-size: x-large;
+word-wrap: break-word;
+}
+
+.hero-text h2{
+font-size:clamp(16px, 2.5vw, 28px);
+}
+
+.hero-text li{
+font-size:clamp(12px, 2vw, 16px);
 }
 
 .hero-text ul{
