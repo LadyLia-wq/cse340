@@ -1,6 +1,298 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+/* MOBILE */
+
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background:white;
+}
+
+/* HEADER */
+
+#top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+}
+
+/* SITE NAME */
+
+.siteName a{
+font-size:28px;
+font-weight:bold;
+text-decoration:none;
+color:#333;
+}
+
+/* MY ACCOUNT LINK */
+
+#tools a{
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
+
+
+.top-header h1{
+margin:0;
+font-size:28px;
+}
+
+.account-link{
+text-decoration:none;
+color:black;
+font-size:14px;
+}
+
+/* NAVIGATION */
+
+.main-nav{
+background:#2f2f3a;
+}
+
+.nav{
+display:flex;
+justify-content:space-around;
+background:#2f2f3a;
+list-style:none;
+margin:0;
+padding:12px 0;
+}
+
+.nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.nav li{
+flex:1;
+text-align:center;
+}
+
+/* MAIN CONTENT */
+
+main{
+padding:15px;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+margin-top:10px;
+}
+
+.hero-img{
+width:100%;
+display:block;
+}
+
+.hero-text{
+position:absolute;
+top:15px;
+left:15px;
+background: rgba(255,255,255,0.6); 
+padding:10px 15px;
+border-radius:5px;
+color:#0097a7;
+font-size: x-large;
+}
+
+.hero-text ul{
+list-style:none;
+padding:0;
+margin:5px 0;
+}
+
+/* BUTTON */
+
+.own-btn{
+display:inline-block;
+background:#0097a7;
+color:white;
+padding:8px 16px;
+text-decoration:none;
+font-weight:bold;
+margin-top:5px;
+}
+
+/* REVIEWS */
+
+.reviews{
+margin-top:25px;
+}
+
+.reviews ul{
+padding-left:20px;
+}
+
+.reviews li{
+  padding-bottom: 15px;
+}
+
+/* UPGRADES */
+
+.upgrade-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.upgrade-item{
+text-align:center;
+}
+
+.upgrade-box{
+background:#17a2b8;
+padding:15px;
+border:1px solid #333;
+height: 70px;
+}
+
+.upgrade-box img{
+width:70px;
+display:block;
+margin:auto;
+}
+
+.upgrade-item a{
+display:block;
+margin-top:5px;
+color:#0000ee;
+}
+
+/* IMAGE FIX */
+
+img{
+max-width:100%;
+height:auto;
+}
+
+.copyright{
+  padding-left: 15px;
+}
+
+/* DESKTOP */
+
+@media screen and (min-width:768px){
+
+/* CHECKERBOARD BACKGROUND */
+
+body{
+background-image: url("/images/site/checkerboard.jpg");
+background-repeat: repeat;
+margin:0;
+}
+
+/* WHITE PAGE CARD */
+
+#page-wrapper{
+background:white;
+max-width:1100px;
+height: 1210px;
+margin:40px auto;
+border:4px solid #00a7c4;
+border-radius:10px;
+padding:20px;
+}
+
+/* HERO SECTION */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:relative;
+padding-bottom: 50px;
+padding-top: 0%;
+}
+
+.hero-img{
+max-width:900px;
+}
+
+.hero-text{
+position:absolute;
+top:60px;
+left:40px;
+color:#0097a7;
+background:rgba(255,255,255,0.7);
+padding:10px 15px;
+border-radius:5px;
+font-size:xx-large;
+}
+
+/* DESKTOP CONTENT LAYOUT */
+
+main{
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-areas:
+"title title"
+"hero hero"
+"upgrades reviews";
+gap:30px;
+}
+
+/* GRID AREAS */
+
+main h1{
+  grid-area: title;
+}
+
+.hero{
+grid-area:hero;
+}
+
+.upgrades{
+grid-area:upgrades;
+}
+
+.reviews{
+grid-area:reviews;
+}
+
+.reviews ul{
+  /* padding-top: 50px; */
+  font-size: 170%;
+  padding-inline: 10px;
+}
+
+.reviews h2{
+  margin-top: -8px;
+  padding-bottom: 10px;
+}
+
+.upgrade-grid{
+  padding-top: 30px;
+}
+
+/* UPGRADES GRID */
+
+.upgrade-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+/* BUTTON */
+
+.own-btn{
+display:inline-block;
+background:#0097a7;
+color:white;
+padding:10px 20px;
+margin-top:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* IMAGE FIX */
+
+img{
+max-width:100%;
+height:auto;
+}
+
 }
