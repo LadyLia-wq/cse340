@@ -46,7 +46,7 @@ font-size:14px;
 
 /* NAVIGATION */
 
-.main-nav{
+/* .main-nav{
 background:#2f2f3a;
 }
 
@@ -68,6 +68,32 @@ font-weight:bold;
 .nav li{
 flex:1;
 text-align:center;
+} */
+
+/* NAVIGATION BAR FIX */
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #0a2540;
+}
+
+nav li {
+  margin: 0;
+  flex: 1;
+}
+
+nav a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: #00b4d8;
 }
 
 /* MAIN CONTENT */
