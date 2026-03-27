@@ -1,39 +1,23 @@
-const { Client } = require("pg")
-
-// Use the exact URL format from Render
-const connectionString = "postgresql://cse340aa_28y6_user:8s2HJUquFfYoblg8JP07tnX7SzN4GEUG@dpg-d6sqd9paae7s73dh0hkg-a.singapore-postgres.render.com:5432/cse340aa_28y6"
-
-console.log('Testing connection with full URL...')
-console.log('URL (password hidden):', connectionString.replace(/:[^:]*@/, ':****@'))
+const { Client } = require("pg");
 
 const client = new Client({
-    connectionString: connectionString,
-    ssl: {
-        rejectUnauthorized: false,
-    },
-    connectionTimeoutMillis: 15000,
-})
+  connectionString: "postgresql://renderdb_z81z_user:0AAkcTMNdBb1XE1J9ePImOnbYDuCiOZK@dpg-d72og8fdiees738vfmm0-a.singapore-postgres.render.com/renderdb_z81z",
+  ssl: { rejectUnauthorized: false },
+});
 
-// Add detailed event logging
-client.on('connect', () => console.log('🔌 Socket connected'))
-client.on('error', (err) => console.log('⚠️ Client error:', err.message))
-client.on('end', () => console.log('🔌 Connection ended'))
+(async () => {
+  try {
+    console.log("Connecting...");
+    await client.connect();
 
-console.log('Attempting to connect...')
-
-client.connect()
-    .then(() => {
-        console.log('✅ Connected to PostgreSQL!')
-        return client.query('SELECT version()')
-    })
-    .then(result => {
-        console.log('✅ Query successful!')
-        console.log('PostgreSQL version:', result.rows[0].version)
-        client.end()
-    })
-    .catch(err => {
-        console.error('❌ Connection failed:', err.message)
-        console.error('\nFull error details:')
-        console.error(err)
-        client.end()
-    })
+    console.log("Running query...");
+    const res = await client.query("SELECT NOW()");
+    
+    console.log("✅ Success:", res.rows[0]);
+  } catch (err) {
+    console.error("❌ Error:", err.message);
+  } finally {
+    await client.end();
+    console.log("Connection closed");
+  }
+})();

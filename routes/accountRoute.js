@@ -10,10 +10,9 @@ router.get(
   utilities.handleErrors(accountController.buildAccount)
 )
 
-module.exports = router
-
 router.get(
     "/login",
     utilities.handleErrors(accountController.buildLogin)
 )
 
+module.exports = router
